@@ -13,11 +13,9 @@
 #include "libft.h"
 #include <ctype.h>
 
-int toupper(int c)
+int	toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		c -= 32;
 	return (c);
 }
-
-//poner en lib y makefile
