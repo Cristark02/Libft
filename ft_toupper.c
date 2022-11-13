@@ -6,14 +6,14 @@
 /*   By: mmita <mmita@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 19:00:13 by mmita             #+#    #+#             */
-/*   Updated: 2022/10/12 19:12:42 by mmita            ###   ########.fr       */
+/*   Updated: 2022/11/13 14:07:45 by mmita            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <ctype.h>
 
-int	toupper(int c)
+int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		c -= 32;
