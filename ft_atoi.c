@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmita <mmita@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/13 15:56:55 by mmita             #+#    #+#             */
-/*   Updated: 2022/11/17 16:56:14 by mmita            ###   ########.fr       */
+/*   Created: 2022/11/17 17:18:27 by mmita             #+#    #+#             */
+/*   Updated: 2022/11/17 17:36:43 by mmita            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
+#include <stdlib.h>
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_atoi(const char *str)
 {
-	size_t	i;
+	int			sign;
+	long long	value;
 
-	i = 0;
-	if (n == 0)
-		return (0);
-	while ((*s1 == *s2) && (*s1 != '\0' || *s2 != '\0') && (n != 1))
+	sign = 1;
+	value = 0;
+	while (*str == ' ' || *str == '\f' || *str == '\n'
+		|| *str == '\r' || *str == '\t' || *str == '\v')
+		str++;
+	if (*str == '-')
+		sign = -1;
+	if (*str == '-' || *str == '+')
+		str++;
+	while (ft_isdigit(*str))
 	{
-		s1++;
-		s2++;
-		n--;
+		value = value * 10 + (*str - '0');
+		str++;
 	}
-	return ((unsigned char)*s1 - (unsigned char)*s2);
+	return (value * sign);
 }
