@@ -1,32 +1,60 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmita <mmita@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/19 16:13:35 by mmita             #+#    #+#             */
-/*   Updated: 2022/11/21 13:39:16 by mmita            ###   ########.fr       */
+/*   Created: 2022/11/21 15:14:55 by mmita             #+#    #+#             */
+/*   Updated: 2022/11/21 15:43:53 by mmita            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 
-char	*ft_strtrim(char const *s1, char const *set)
+static	int	len(long nl)
+{
+	int	l;
+
+	l = 0;
+	if (nl == 0)
+		l = 1;
+	else if (nl < 0)
+	{
+		nl = -nl;
+		l++;
+	}
+	while (nl > 0)
+	{
+		nl = nl / 10;
+		l++;
+	}
+	return (l);
+}
+
+char	*ft_itoa(int n)
 {
 	char	*str;
-	size_t	i;
+	int		i;
+	long	nl;
 
-	if (!s1 || !set)
+	nl = n;
+	i = len(nl);
+	str = (char *)malloc (sizeof(char) * (len(nl) + 1));
+	if (!str)
 		return (NULL);
-	while (*s1 && ft_strchr(set, *s1))
-		s1++;
-	i = ft_strlen(s1);
-	while (i && ft_strchr(set, s1[i]))
-		i--;
-	str = ft_substr ((char *)s1, 0, i + 1);
+	str[i--] = '\0';
+	if (nl == 0)
+		str[0] = '0';
+	if (nl < 0)
+	{
+		str[0] = '-';
+		nl = -nl;
+	}
+	while (nl > 0)
+	{
+		str[i--] = 48 + (nl % 10);
+		nl = nl / 10;
+	}
 	return (str);
 }
