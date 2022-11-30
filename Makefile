@@ -6,7 +6,7 @@
 #    By: mmita <mmita@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/24 17:01:26 by mmita             #+#    #+#              #
-#    Updated: 2022/11/26 14:53:44 by mmita            ###   ########.fr        #
+#    Updated: 2022/11/30 15:36:37 by mmita            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +52,10 @@ ft_lstadd_front_bonus.c \
 ft_lstsize_bonus.c \
 ft_lstlast_bonus.c \
 ft_lstadd_back_bonus.c \
-ft_lstdelone_bonus.c 
+ft_lstdelone_bonus.c \
+ft_lstclear_bonus.c \
+ft_lstiter_bonus.c \
+ft_lstmap_bonus.c
 
 BONUS_OBJS = $(BONUS:.c=.o)
 
