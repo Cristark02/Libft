@@ -6,13 +6,15 @@
 /*   By: mmita <mmita@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 17:18:27 by mmita             #+#    #+#             */
-/*   Updated: 2022/11/17 17:36:43 by mmita            ###   ########.fr       */
+/*   Updated: 2022/12/08 18:35:55 by mmita            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
-
+/*
+def
+*/
 int	ft_atoi(const char *str)
 {
 	int			sign;
